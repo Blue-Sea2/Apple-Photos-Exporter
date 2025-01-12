@@ -7,7 +7,7 @@ from PIL import Image
 from datetime import datetime
 import sys
 
-parent = "D:/Fotos-Mediathek.photoslibrary/Masters" #path of Masters or Originals folder here 
+parent = "D:/ Photos-Library.photoslibrary/Masters" #path of Masters or Originals folder here 
 output_folder = "D:/photos/" #path of the output folder here
 paths = []
 titles = []
