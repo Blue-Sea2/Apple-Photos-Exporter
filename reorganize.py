@@ -78,12 +78,16 @@ for path,title in files.items():
     target = str(output_folder+title)
     try:
         shutil.copyfile(path, target)
-        os.utime((target), (mdate, mdate))
-        set_creation_date(target, date)
-        i+=1
-        print(i,"/",len(files))
+        try:
+            os.utime((target), (mdate, mdate))
+            set_creation_date(target, date)
+        except:
+            print("datetime not set for",title)
+        
     except:
         print("Could not copy",path,"as",title)
         failed.append(path)
+    i+=1
+    print(i,"/",len(files))
 
 print("failed to move:",str(failed))
